@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 import './global.scss'
 import {
   createBrowserRouter,
@@ -8,7 +9,14 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: 
+    <div class="container">
+      <div class="bottom-left">
+        <div class="word">Organização</div>
+        <div class="word background-word">Tarefas</div>
+      </div>
+     
+    </div>,
   },
 ]);
 
