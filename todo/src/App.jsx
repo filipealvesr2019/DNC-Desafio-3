@@ -1,21 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-      <div class="container">
-        <div class="bottom-left">
-          <div class="word">Organização</div>
-          <div class="word background-word">Tarefas</div>
+      <div className="container">
+        <div className="bottom-left">
+          <div className="word">Organização</div>
+          <div className="word background-word">Tarefas</div>
         </div>
       </div>
-      <div>
-        <h1 style={{ color: 'red' }}>hgfhgfhgfhgfh</h1>
+      <div className='container-body'>
+        <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
+        <h2>Tarefa</h2>
+        <h2>Status</h2>
+        <h2>Opções</h2>
       </div>
     </div>
   )
