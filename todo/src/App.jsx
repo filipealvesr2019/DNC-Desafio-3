@@ -1,4 +1,4 @@
-import './App.scss'
+import './App.scss';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <div class="line"></div>
           </div>
           <div className='task-container'>
-          <h3>Nova tarefa...</h3><img src="/images/plus.png" alt="" />
+          <h3>Nova tarefa...</h3><img onClick={'taskOpen'} src="/images/plus.png" alt="" />
         </div>
 
       </div>
