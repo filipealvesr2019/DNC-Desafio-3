@@ -19,6 +19,10 @@ function App() {
         <div class="line-container">
           <div class="line"></div>
           </div>
+          <div className='task-container'>
+          <h3>Nova tarefa...</h3><img src="/images/plus.png" alt="" />
+        </div>
+
       </div>
     </div>
   )

@@ -78,3 +78,20 @@ body {
   background-color: #D9D9D9;
   
 }
+
+
+.task-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 32em;
+  margin-left: 32em;
+}
+h3{
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-style: italic;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+
+}
