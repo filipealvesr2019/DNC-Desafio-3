@@ -7,12 +7,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div class="container">
-      <div class="bottom-left">
-        <div class="word">Organização</div>
-        <div class="word background-word">Tarefas</div>
+    <div>
+      <div class="container">
+        <div class="bottom-left">
+          <div class="word">Organização</div>
+          <div class="word background-word">Tarefas</div>
+        </div>
       </div>
-     
+      <div>
+        <h1 style={{ color: 'red' }}>hgfhgfhgfhgfh</h1>
+      </div>
     </div>
   )
 }
