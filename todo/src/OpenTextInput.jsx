@@ -32,13 +32,13 @@ function App(){
             {isInputVisible ?(
                 <div>
                      <input type="text" onChange={handleInputChange} placeholder='Digite a tarefa...'/>
-                     <button onClick={handleSaveClick}></button>
+                     <button onClick={handleSaveClick}>Salvar</button>
                 </div>
                
             ):(
             <div>
+                <span>{displayText}</span>
                 <button onClick={handleIconClick}>
-                    <span>{displayText}</span>
                     <IoMdAdd></IoMdAdd>
                 </button>
             </div>
