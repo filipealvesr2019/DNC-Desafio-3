@@ -1,5 +1,7 @@
+import React from "react";
+import ReactDOM from 'react-dom';
 import './App.scss';
-import React, { useState } from 'react';
+import OpenTextInput from './openTextInput'
 function App() {
   return (
     <div>
@@ -16,16 +18,18 @@ function App() {
         <h2>Status</h2>
         <h2>Opções</h2>
         </div>
-        <div class="line-container">
-          <div class="line"></div>
+        <div className="line-container">
+          <div className="line"></div>
           </div>
           <div className='task-container'>
-          <h3>Nova tarefa...</h3><img onClick={'taskOpen'} src="/images/plus.png" alt="" />
+          <h3>Nova tarefa...</h3><OpenTextInput/>
         </div>
 
       </div>
     </div>
   )
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App
