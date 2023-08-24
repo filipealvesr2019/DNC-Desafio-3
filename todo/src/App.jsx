@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import './App.scss';
 import OpenTextInput from './openTextInput'
@@ -21,10 +21,9 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          <div className='task-container'>
+          <div className='task-container'>         
           <h3>Nova tarefa...</h3><OpenTextInput/>
         </div>
-
       </div>
     </div>
   )

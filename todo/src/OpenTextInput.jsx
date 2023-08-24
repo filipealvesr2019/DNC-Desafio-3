@@ -5,7 +5,7 @@ import './App.scss';
 
 function App(){
     const [isInputVisible, setInputVisible] = useState(false);
-    const [displayText, setDisplayText] = useState('');
+    const [displayText, setDisplayText] = useState([]);
     const [inputText, setInputText] = useState('');
 
     
@@ -18,7 +18,7 @@ function App(){
     }
 
     const handleSaveClick = () =>{
-        setDisplayText(inputText);
+        setDisplayText([...displayText, inputText]);
         setInputText('');
         setInputVisible(false);
 
@@ -29,6 +29,12 @@ function App(){
 
     return (
         <div>
+            
+            {displayText.map((text, index) =>(
+                <div  key={index}  className="saved-text">
+                    {index + 1}: {text}
+                </div>
+            ))}
             {isInputVisible ?(
                 <div>
                      <input type="text" onChange={handleInputChange} placeholder='Digite a tarefa...'/>
@@ -37,9 +43,8 @@ function App(){
                
             ):(
             <div>
-                <span>{displayText}</span>
-                <button onClick={handleIconClick}>
-                    <IoMdAdd></IoMdAdd>
+                <button className='transparent-button' onClick={handleIconClick}>
+                    <IoMdAdd  className='icon-style'></IoMdAdd>
                 </button>
             </div>
             )}
