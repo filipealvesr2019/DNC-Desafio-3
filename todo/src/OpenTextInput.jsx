@@ -18,9 +18,11 @@ function App(){
     }
 
     const handleSaveClick = () =>{
+        if(inputText.trim() !== '' ){
         setDisplayText([...displayText, inputText]);
         setInputText('');
         setInputVisible(false);
+        }
 
     }
     
