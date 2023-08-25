@@ -38,7 +38,7 @@ function App(){
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => removeEventListener('mousedown', handleClickOutside)
-    })
+    },[])
 
     const handleSubmit = (Event) => {
         Event.preventDefault();
