@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IoMdAdd } from 'react-icons/io';
 import './App.scss';
 
@@ -25,7 +25,32 @@ function App(){
         }
 
     }
-    
+
+
+    const inputRef = useRef(null);
+
+    const handleClickOutside = (Event) =>{
+        if(inputRef.current && !inputRef.current.contains(Event.target)){
+            setInputVisible(false)
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => removeEventListener('mousedown', handleClickOutside)
+    })
+
+    const handleSubmit = (Event) => {
+        Event.preventDefault();
+        if(inputText.trim() !== ''){
+            setDisplayText([...displayText, inputText]);
+            setInputText('')
+        }
+
+        setInputVisible(false)
+    }
+
+
 
 
 
@@ -38,9 +63,11 @@ function App(){
                 </div>
             ))}
             {isInputVisible ?(
-                <div>
-                     <input type="text" onChange={handleInputChange} placeholder='Digite a tarefa...'/>
+                <div className='input-style'>
+                    <form onSubmit={handleSubmit}>
+                     <input type="text" onChange={handleInputChange} placeholder='Digite a tarefa...' ref={inputRef}/>
                      <button onClick={handleSaveClick}>Salvar</button>
+                     </form>
                 </div>
                
             ):(

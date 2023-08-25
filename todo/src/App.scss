@@ -105,3 +105,24 @@ h3{
 .icon-style{
   color: #FFFFFF;
 }
+
+
+.input-style{
+  display: flex;
+  border-radius: 5px;
+  border: none;
+}
+.input-style input{
+  width: 20rem;
+  height: 2rem;
+}
+
+.input-style button{
+  background-color: #0C70F2;
+  color: #FFFFFF;
+}
+
+
+.saved-text{
+  color: #FFFFFF;
+}
