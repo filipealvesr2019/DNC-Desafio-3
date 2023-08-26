@@ -3,14 +3,17 @@ import { IoMdAdd } from 'react-icons/io';
 import './App.scss';
 
 
-function App(){
-    const [isInputVisible, setInputVisible] = useState(false);
+function OpenTextInput({displayOnly}){
+    const [isInputVisible, setInputVisible] = useState(!displayOnly);
     const [displayText, setDisplayText] = useState([]);
     const [inputText, setInputText] = useState('');
 
     
     const handleIconClick = () => {
-        setInputVisible(true);
+        if(!displayOnly){
+            setInputVisible(true);
+        }
+        
     }
 
     const handleInputChange = (Event) =>{
@@ -60,9 +63,10 @@ function App(){
             {displayText.map((text, index) =>(
                 <div  key={index}  className="saved-text">
                     {index + 1}: {text}
+                    console.log('texte')
                 </div>
             ))}
-            {isInputVisible ?(
+            {(!displayOnly && isInputVisible) ?(
                 <div className='input-style'>
                     <form onSubmit={handleSubmit}>
                      <input type="text" onChange={handleInputChange} placeholder='Digite a tarefa...' ref={inputRef}/>
@@ -72,9 +76,9 @@ function App(){
                
             ):(
             <div>
-                <button className='transparent-button' onClick={handleIconClick}>
+                {(!displayOnly) && (<button className='transparent-button' onClick={handleIconClick}>
                     <IoMdAdd  className='icon-style'></IoMdAdd>
-                </button>
+                </button>)}
             </div>
             )}
         </div>
@@ -92,6 +96,6 @@ function App(){
 
 
 
-export default App;
+export default OpenTextInput;
 
 

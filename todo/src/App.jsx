@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import ReactDOM from 'react-dom';
+import React from 'react';
 import './App.scss';
-import OpenTextInput from './OpenTextInput'
+import OpenTextInput from './OpenTextInput';
+
 function App() {
   return (
     <div>
@@ -21,7 +21,11 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          <div className='task-container'>         
+          <div className='task-container'>
+            <div className="saved-tasks">
+            <h3>Tarefas Salvas</h3>
+            <OpenTextInput displayOnly={true}/>
+            </div>         
           <h3>Nova tarefa...</h3><OpenTextInput/>
          </div>
       </div>
@@ -29,6 +33,5 @@ function App() {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App
