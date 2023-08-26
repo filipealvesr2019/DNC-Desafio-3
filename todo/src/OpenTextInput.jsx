@@ -4,7 +4,7 @@ import './App.scss';
 
 
 function OpenTextInput({displayOnly}){
-    const [isInputVisible, setInputVisible] = useState(!displayOnly);
+    const [isInputVisible, setInputVisible] = useState(false);
     const [displayText, setDisplayText] = useState([]);
     const [inputText, setInputText] = useState('');
 
@@ -22,7 +22,7 @@ function OpenTextInput({displayOnly}){
 
     const handleSaveClick = () =>{
         if(inputText.trim() !== '' ){
-        setDisplayText([...displayText, inputText]);
+        setDisplayText(prevDisplayText => [...prevDisplayText, inputText]);
         setInputText('');
         setInputVisible(false);
         }
@@ -39,8 +39,19 @@ function OpenTextInput({displayOnly}){
     }
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => removeEventListener('mousedown', handleClickOutside)
+        const handleInputMouseDown = (event) => {
+            event.stopPropagation();
+        };
+    
+        if (inputRef.current) {
+            inputRef.current.addEventListener('mousedown', handleInputMouseDown);
+        }
+    
+        return () => {
+            if (inputRef.current) {
+                inputRef.current.removeEventListener('mousedown', handleInputMouseDown);
+            }
+        };
     }, [])
 
     const handleSubmit = (Event) => {
