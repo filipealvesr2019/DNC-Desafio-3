@@ -25,9 +25,10 @@ function App() {
             <div className="saved-tasks">
             <h3>Tarefas Salvas</h3>
             <OpenTextInput displayOnly={true}/>
-            <OpenTextInput />
+            
             </div>         
           <h3>Nova tarefa...</h3>
+          <OpenTextInput />
          </div>
       </div>
     </div>
