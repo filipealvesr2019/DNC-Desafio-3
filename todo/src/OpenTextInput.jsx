@@ -63,9 +63,11 @@ function OpenTextInput({displayOnly}){
             {displayText.map((text, index) =>(
                 <div  key={index}  className="saved-text">
                     {index + 1}: {text}
-                    console.log('texte')
+
                 </div>
+                
             ))}
+           
             {(!displayOnly && isInputVisible) ?(
                 <div className='input-style'>
                     <form onSubmit={handleSubmit}>
@@ -73,6 +75,7 @@ function OpenTextInput({displayOnly}){
                      <button onClick={handleSaveClick}>Salvar</button>
                      </form>
                 </div>
+                
                
             ):(
             <div>
@@ -82,6 +85,7 @@ function OpenTextInput({displayOnly}){
             </div>
             )}
         </div>
+        
     )
     
 }
