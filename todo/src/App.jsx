@@ -21,8 +21,9 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
+          
           <div className='task-container'>
-          <OpenTextInput displayOnly={true}/>
+      
 
             <div className="saved-tasks">
             <h3>Tarefas Salvas</h3>
@@ -30,7 +31,7 @@ function App() {
             
             </div>         
           <h3>Nova tarefa...</h3>
-         
+          <OpenTextInput displayOnly={true}/>
          </div>
       </div>
     </div>
