@@ -23,11 +23,10 @@ function App() {
           </div>
           
           <div className='task-container'>
-      
-
+          <OpenTextInput />
             <div className="saved-tasks">
             <h3>Tarefas Salvas</h3>
-            <OpenTextInput />
+          
             
             </div>         
           <h3>Nova tarefa...</h3>
