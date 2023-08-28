@@ -3,7 +3,7 @@ import { IoMdAdd } from 'react-icons/io';
 import './App.scss';
 import SavedTasksDisplay  from './SavedTasksDisplay'
 
-function OpenTextInput({displayOnly, savedText  }){
+function OpenTextInput({displayOnly, addSavedText  }){
     const [isInputVisible, setInputVisible] = useState(false);
     const [displayText, setDisplayText] = useState([]);
     const [inputText, setInputText] = useState('');

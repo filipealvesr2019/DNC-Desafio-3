@@ -25,16 +25,11 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          <div className='savedText'>
+          <div>
           <SavedTasksDisplay savedTasks={savedText} />
 
           </div>
-          <div className='task-container'>
-            <div className="saved-tasks">
-            <h3>Tarefas Salvas</h3>
-
-            
-            </div>         
+          <div className='task-container'>         
           <h3>Nova tarefa...</h3>                  <OpenTextInput addSavedText={addSavedText} />
 
          
