@@ -82,11 +82,9 @@ body {
 
 .task-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-right: 32em;
-  margin-left: 32em;
-  margin-top: 3rem;
+  
 }
 h3{
   font-family: 'Raleway';
@@ -94,8 +92,18 @@ h3{
   font-style: italic;
   color: #FFFFFF;
   font-size: 1.3rem;
+  margin: 0;
+  margin-top: 3rem;
+  margin-right: 8em;
 
 }
+
+.icon-style{
+  color: #FFFFFF;
+  margin: 0;
+  margin-left: 11rem;
+}
+
 
 .transparent-button{
   background-color:transparent;
@@ -103,9 +111,6 @@ h3{
   padding: 0;
 }
 
-.icon-style{
-  color: #FFFFFF;
-}
 
 
 .input-style{
