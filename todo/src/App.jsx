@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import OpenTextInput from './OpenTextInput';
-
+import OpenTextInput from './OpenText';
+import SavedTasksDisplay from './SavedTasksDisplay'
 function App() {
+  const [savedText, setSavedText] = useState([]); // Inicialize a variável savedText
+  const addSavedText = (newText) => {
+    setSavedText([...savedText, newText]);
+  }
   return (
     <div>
       <div className="container">
@@ -21,21 +25,25 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          
+          <div className='savedText'>
+          <SavedTasksDisplay savedTasks={savedText} />
+
+          </div>
           <div className='task-container'>
-          <OpenTextInput />
             <div className="saved-tasks">
             <h3>Tarefas Salvas</h3>
-          
+
             
             </div>         
-          <h3>Nova tarefa...</h3>
-          <OpenTextInput displayOnly={true}/>
+          <h3>Nova tarefa...</h3>                  <OpenTextInput addSavedText={addSavedText} />
+
+         
          </div>
       </div>
     </div>
   )
 }
+
 
 
 export default App

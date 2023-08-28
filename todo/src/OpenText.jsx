@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { IoMdAdd } from 'react-icons/io';
 import './App.scss';
+import SavedTasksDisplay  from './SavedTasksDisplay'
 
-
-function OpenTextInput({displayOnly}){
+function OpenTextInput({displayOnly, savedText  }){
     const [isInputVisible, setInputVisible] = useState(false);
     const [displayText, setDisplayText] = useState([]);
     const [inputText, setInputText] = useState('');
@@ -39,24 +39,25 @@ function OpenTextInput({displayOnly}){
     }
 
     useEffect(() => {
-        const handleInputMouseDown = (event) => {
-            event.stopPropagation();
-        };
-    
+         const handleInputMouseDown = (event) => {
+        event.stopPropagation();
+    };
+
+    if (inputRef.current) {
+        inputRef.current.addEventListener('mousedown', handleInputMouseDown);
+    }
+
+    return () => {
         if (inputRef.current) {
-            inputRef.current.addEventListener('mousedown', handleInputMouseDown);
+            inputRef.current.removeEventListener('mousedown', handleInputMouseDown);
         }
-    
-        return () => {
-            if (inputRef.current) {
-                inputRef.current.removeEventListener('mousedown', handleInputMouseDown);
-            }
-        };
+    };
     }, [])
 
     const handleSubmit = (Event) => {
         Event.preventDefault();
         if(inputText.trim() !== ''){
+            addSavedText(inputText);             
             setDisplayText([...displayText, inputText]);
             setInputText('')
         }
@@ -66,19 +67,10 @@ function OpenTextInput({displayOnly}){
 
 
 
-
-
     return (
         <div>
-            
-            {displayText.map((text, index) =>(
-                <div  key={index}  className="saved-text">
-                    {index + 1}: {text}
+            <SavedTasksDisplay savedTasks={displayText} />
 
-                </div>
-                
-            ))}
-           
             {(!displayOnly && isInputVisible) ?(
                 <div className='input-style'>
                     <form onSubmit={handleSubmit}>
@@ -111,6 +103,13 @@ function OpenTextInput({displayOnly}){
 
 
 
+
+
 export default OpenTextInput;
+
+
+
+
+
 
 
