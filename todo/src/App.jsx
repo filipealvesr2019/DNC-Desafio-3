@@ -30,7 +30,7 @@ function App() {
 
           </div>
           <div className='task-container'>         
-          <h3>Nova tarefa...</h3>                  <OpenTextInput addSavedText={addSavedText} />
+          <h3 className="icon-style">Nova tarefa...</h3>                  <OpenTextInput  className="icon-style" addSavedText={addSavedText} />
 
          
          </div>
