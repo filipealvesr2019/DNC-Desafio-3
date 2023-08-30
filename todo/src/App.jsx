@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 function TodoList() {
-  const [tasks, setTasks] = useState;
+  const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
   const [isAddingTask, setIsAddingTask] = useState(false);
 
@@ -42,13 +42,20 @@ function TodoList() {
           <div className='task-container'>         
           <h3 className="icon-style">Nova tarefa...</h3>
           <div>
+            <div>
+              {tasks.map((task, index) => (
+                <div key={index}>
+                  <span>{task}</span>
+                </div>
+              ))}
+            </div>
           {isAddingTask ? (
             <div>
               <input type="text" value={currentTask} onChange={handleTaskChange} />
               <button onClick={handleTaskAdd}>Adicionar</button>
             </div>  
           ) : (
-            <button></button>
+            <button  onClick={handleAddButtonClick}>+</button>
 
           )}
           </div>
