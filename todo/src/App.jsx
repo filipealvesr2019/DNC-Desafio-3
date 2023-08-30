@@ -19,7 +19,7 @@ function TodoList() {
   }
 
   const handleAddButtonClick = () => {
-    isAddingTask(true);
+    setIsAddingTask(true);
   }
   return (
     <div>
@@ -39,16 +39,17 @@ function TodoList() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          <div className='task-container'>         
-          <h3 className="icon-style">Nova tarefa...</h3>
-          <div>
-            <div>
+          <div className='output-style'>
               {tasks.map((task, index) => (
                 <div key={index}>
                   <span>{task}</span>
                 </div>
               ))}
             </div>
+          <div className='task-container'>         
+          <h3 className="icon-style">Nova tarefa...</h3>
+          <div>
+           
           {isAddingTask ? (
             <div>
               <input type="text" value={currentTask} onChange={handleTaskChange} />
