@@ -1,11 +1,25 @@
 import React, { useState } from 'react';
 import './App.scss';
-import OpenTextInput from './OpenText';
-import SavedTasksDisplay from './SavedTasksDisplay'
-function App() {
-  const [savedText, setSavedText] = useState([]); // Inicialize a variável savedText
-  const addSavedText = (newText) => {
-    setSavedText([...savedText, newText]);
+function TodoList() {
+  const [tasks, setTasks] = useState;
+  const [currentTask, setCurrentTask] = useState('');
+  const [isAddingTask, setIsAddingTask] = useState(false);
+
+  const handleTaskChange = (e) => {
+    setCurrentTask(e.target.value)
+  }
+
+  const handleTaskAdd = () =>{
+    if(currentTask.trim() !== ""){
+      setTasks([...tasks, currentTask]);
+      setCurrentTask('');
+      setIsAddingTask(false)
+
+    }
+  }
+
+  const handleAddButtonClick = () => {
+    isAddingTask(true);
   }
   return (
     <div>
@@ -25,15 +39,9 @@ function App() {
         <div className="line-container">
           <div className="line"></div>
           </div>
-          <div>
-          <SavedTasksDisplay savedTasks={savedText} />
-
-          </div>
           <div className='task-container'>         
-          <h3 className="icon-style">Nova tarefa...</h3>                  <OpenTextInput  className="icon-style" addSavedText={addSavedText} />
-
-         
-         </div>
+          <h3 className="icon-style">Nova tarefa...</h3>
+          </div>
       </div>
     </div>
   )
@@ -41,4 +49,5 @@ function App() {
 
 
 
-export default App
+export default TodoList;
+
