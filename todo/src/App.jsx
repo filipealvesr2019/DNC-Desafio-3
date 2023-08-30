@@ -41,6 +41,17 @@ function TodoList() {
           </div>
           <div className='task-container'>         
           <h3 className="icon-style">Nova tarefa...</h3>
+          <div>
+          {isAddingTask ? (
+            <div>
+              <input type="text" value={currentTask} onChange={handleTaskChange} />
+              <button onClick={handleTaskAdd}>Adicionar</button>
+            </div>  
+          ) : (
+            <button></button>
+
+          )}
+          </div>
           </div>
       </div>
     </div>
