@@ -93,6 +93,7 @@ h3{
   font-style: italic;
   color: #FFFFFF;
   font-size: 1.3rem;
+  margin-left: 24em;
 
  
 
@@ -137,7 +138,30 @@ h3{
 
 .output-style{
   color: #FFFFFF;
+  margin-left: 32em;
+  margin-top: 1rem;
 }
 
 
+.input-container{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
 
+.plus-input{
+  margin-right: 39em;
+  color: #FFFFFF;
+}
+
+.input-text{
+  margin-right: 32em;
+  display: flex;
+
+}
+
+.add-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

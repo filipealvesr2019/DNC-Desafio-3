@@ -48,15 +48,15 @@ function TodoList() {
             </div>
           <div className='task-container'>         
           <h3 className="icon-style">Nova tarefa...</h3>
-          <div>
+          <div className='input-container'>
            
           {isAddingTask ? (
-            <div>
+            <div className='input-text'>
               <input type="text" value={currentTask} onChange={handleTaskChange} />
               <button onClick={handleTaskAdd}>Adicionar</button>
             </div>  
           ) : (
-            <button  onClick={handleAddButtonClick}>+</button>
+            <button className='plus-input add-button' onClick={handleAddButtonClick}>+</button>
 
           )}
           </div>
