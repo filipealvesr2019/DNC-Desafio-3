@@ -169,3 +169,31 @@ h3{
 .task-item{
   margin-bottom: 1rem;
 }
+
+.task-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.task-text{
+  flex-grow: 1;
+}
+
+.icons-container{
+  display: flex;
+  justify-content: right;
+  margin-right: 30em;
+
+
+}
+
+.space{
+  width:  5rem;
+}
+
+.right-icons{
+  display: flex;
+  gap: 1em;
+}

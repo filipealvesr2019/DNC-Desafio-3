@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.scss';
-import plus from '../public/images/plus.png'
+import plus from '/images/plus.png';
+import pen from '/images/pen.png'
+import trash from '/images/trash-can.png'
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
@@ -43,7 +45,17 @@ function TodoList() {
           <div className='output-style'>
               {tasks.map((task, index) => (
                 <div key={index} className='task-item'>
-                  <span>{task}</span>
+                  <div className='task-row'>
+                  <span className='task-text'>{task}</span>
+                  <div className='icons-container'>
+                    <input type="checkbox" className='check-icon'/>
+                    <span className='space'></span>
+                    <span className='right-icons'>
+                      <i className='icon edit-icon'> <img src={pen} alt="icone de lapis" /></i>
+                      <i className='icon delete-icon'><img src={trash} alt="icone de lixeira" /></i>
+                    </span>
+                   </div>
+                  </div>
                 </div>
               ))}
             </div>
