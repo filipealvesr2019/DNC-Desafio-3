@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
+import plus from '../public/images/plus.png'
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
@@ -41,7 +42,7 @@ function TodoList() {
           </div>
           <div className='output-style'>
               {tasks.map((task, index) => (
-                <div key={index}>
+                <div key={index} className='task-item'>
                   <span>{task}</span>
                 </div>
               ))}
@@ -56,7 +57,7 @@ function TodoList() {
               <button onClick={handleTaskAdd}>Adicionar</button>
             </div>  
           ) : (
-            <button className='plus-input add-button' onClick={handleAddButtonClick}>+</button>
+            <button className='plus-input add-button' onClick={handleAddButtonClick}><img src={plus} alt="icone de +" /></button>
 
           )}
           </div>
