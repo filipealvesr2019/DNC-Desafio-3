@@ -203,6 +203,21 @@ h3{
   background-color: #0056b3;
 }
 
-@media screen and (min-width: 800px) {
-  
+@media only screen and (max-width: 1280px) and (min-width: 800px){
+  .line{
+    width: 54vw;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 900px){
+  .line{
+    width: 48vw;
+  }
+}
+
+
+@media only screen and (max-width: 1280px) and (min-width: 950px){
+  .line{
+    width: 53vw;
+  }
 }
