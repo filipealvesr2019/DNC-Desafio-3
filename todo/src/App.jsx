@@ -51,10 +51,10 @@ function TodoList() {
           <div className='output-style'>
               {tasks.map((task, index) => (
                 <div key={index} className='task-item'>
-                  <div className='task-row'>
-                  <span className='task-text'>{task}</span>
-                  <div className='icons-container'>
-                  <i className='icon checkbox-icon'>
+               
+                  <span className='elements'>{task}</span>
+                  
+      <i className='elements'>
       <img
         src={taskStates[index] ? checkedImage : uncheckedImage}
         alt="checkbox"
@@ -66,13 +66,12 @@ function TodoList() {
         }}
       />
     </i>
-                    <span className='space'></span>
-                    <span className='right-icons'>
+                    <span className='elements'>
                       <i className='icon edit-icon'> <img src={pen} alt="icone de lapis" /></i>
                       <i className='icon delete-icon'><img src={trash} alt="icone de lixeira" /></i>
                     </span>
-                   </div>
-                  </div>
+                 
+               
                 </div>
               ))}
             </div>
