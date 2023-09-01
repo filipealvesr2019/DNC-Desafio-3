@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import './App.scss';
 import plus from '/images/plus.png';
-import pen from '/images/pen.png'
-import trash from '/images/trash-can.png'
+import pen from '/images/pen.png';
+import trash from '/images/trash-can.png';
+
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
   const [isAddingTask, setIsAddingTask] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [uncheckedImage, setUncheckedImage] = useState('/images/desmarcado.png');
+  const [checkedImage, setCheckedImage] = useState('/images/marcado.png');
+  const [taskStates, setTaskStates] = useState([])
 
   const handleTaskChange = (e) => {
     setCurrentTask(e.target.value)
@@ -15,6 +20,7 @@ function TodoList() {
   const handleTaskAdd = () =>{
     if(currentTask.trim() !== ""){
       setTasks([...tasks, currentTask]);
+      setTaskStates([...taskStates, false])
       setCurrentTask('');
       setIsAddingTask(false)
 
@@ -48,7 +54,18 @@ function TodoList() {
                   <div className='task-row'>
                   <span className='task-text'>{task}</span>
                   <div className='icons-container'>
-                    <input type="checkbox" className='check-icon'/>
+                  <i className='icon checkbox-icon'>
+      <img
+        src={taskStates[index] ? checkedImage : uncheckedImage}
+        alt="checkbox"
+        className='checkbox'
+        onClick={() => {
+          const updatedStates = [...taskStates];
+          updatedStates[index] = !updatedStates[index]; 
+          setTaskStates(updatedStates)
+        }}
+      />
+    </i>
                     <span className='space'></span>
                     <span className='right-icons'>
                       <i className='icon edit-icon'> <img src={pen} alt="icone de lapis" /></i>
