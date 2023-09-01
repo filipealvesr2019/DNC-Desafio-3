@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import plus from '/images/plus.png';
 import pen from '/images/pen.png';
@@ -19,10 +19,14 @@ function TodoList() {
 
   const handleTaskAdd = () =>{
     if(currentTask.trim() !== ""){
-      setTasks([...tasks, currentTask]);
+     
       setTaskStates([...taskStates, false])
       setCurrentTask('');
       setIsAddingTask(false)
+      const newTask = currentTask;
+      const tasksWithNewTask = [...tasks, newTask];
+      setTasks(tasksWithNewTask);
+      localStorage.setItem('tasks', JSON.stringify(tasksWithNewTask));
 
     }
   }
@@ -30,6 +34,16 @@ function TodoList() {
   const handleAddButtonClick = () => {
     setIsAddingTask(true);
   }
+
+  useEffect(() => {
+    const getTasksFromLocalStorage = () => {
+      const tasksFromLocalStorage = localStorage.getItem('tasks');
+      if(tasksFromLocalStorage){
+        setTasks(JSON.parse(tasksFromLocalStorage));
+      }
+    };
+    getTasksFromLocalStorage();
+  }, [])
   return (
     <div>
       <div className="container">

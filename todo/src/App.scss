@@ -73,7 +73,7 @@ body {
 }
 
 .line{
-  width: 41%;
+  width: 41vw;
   height: 0.4rem;
   background-color: #D9D9D9;
   
@@ -93,7 +93,7 @@ h3{
   font-style: italic;
   color: #FFFFFF;
   font-size: 1.3rem;
-  margin-left: 24em;
+  margin-left: 30vw;
 
  
 
@@ -152,7 +152,7 @@ h3{
 }
 
 .plus-input{
-  margin-right: 39em;
+  margin-right: 30vw;
   color: #FFFFFF;
 }
 
@@ -203,6 +203,6 @@ h3{
   background-color: #0056b3;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   
 }
