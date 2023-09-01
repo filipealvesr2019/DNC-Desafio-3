@@ -198,3 +198,26 @@ h3{
   gap: 1em;
 
 }
+
+.checkbox-input{
+  flex-grow: 1;
+  height: 1.5rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+
+.checkbox-image{
+  background-color: #0C70F2;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkbox-image:hover{
+  background-color: #0056b3;
+}
