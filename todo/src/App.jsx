@@ -3,6 +3,7 @@ import './App.scss';
 import plus from '/images/plus.png';
 import pen from '/images/pen.png';
 import trash from '/images/trash-can.png';
+import CustomModal from './components/custumModal';
 
 function TodoList() {
   const [tasks, setTasks] = useState([]);
@@ -11,7 +12,33 @@ function TodoList() {
   const [isChecked, setIsChecked] = useState(false);
   const [uncheckedImage, setUncheckedImage] = useState('/images/desmarcado.png');
   const [checkedImage, setCheckedImage] = useState('/images/marcado.png');
-  const [taskStates, setTaskStates] = useState([])
+  const [taskStates, setTaskStates] = useState([]);
+  const [taskToDelete, setTaskToDelete] = useState(null);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+
+
+
+  const openDeleteModal = (taskIndex) => {
+    setTaskToDelete(taskIndex);
+    setIsDeleteModalOpen(true)
+  }
+
+
+ const closeDeleteModal = () =>{
+  setIsDeleteModalOpen(false);
+ }
+
+const handleTaskDelete = (taskIndex) =>{
+  const updatedTasks = [...tasks];
+  updatedTasks.splice(taskIndex, 1);
+  setTasks(updatedTasks);
+  closeDeleteModal();
+}
+
+
+
+
 
   const handleTaskChange = (e) => {
     setCurrentTask(e.target.value)
@@ -82,7 +109,9 @@ function TodoList() {
     </i>
                     <span className='elements'>
                       <i className='icon edit-icon'> <img src={pen} alt="icone de lapis" /></i>
-                      <i className='icon delete-icon'><img src={trash} alt="icone de lixeira" /></i>
+                      <i className='icon delete-icon' onClick={() => {
+                        openDeleteModal(index)
+                      }}><img src={trash} alt="icone de lixeira" /></i>
                     </span>
                  
                
@@ -105,6 +134,10 @@ function TodoList() {
           </div>
           </div>
       </div>
+
+      <CustomModal isOpen={isDeleteModalOpen} onClose={closeDeleteModal} onConfirm={() => {
+        handleTaskDelete(taskToDelete)
+        }}/>
     </div>
   )
 }
