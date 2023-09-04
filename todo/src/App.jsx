@@ -81,6 +81,7 @@ const handleTaskDelete = (taskIndex) =>{
       </div>
       <div className='container-body'>
         <h1>Otimize seu tempo e se organize com o nosso Planejador Diário.</h1>
+        { !isDeleteModalOpen &&  (<>
         <div className='header-title'>
         <h2>Tarefa</h2>
         <h2>Status</h2>
@@ -89,6 +90,8 @@ const handleTaskDelete = (taskIndex) =>{
         <div className="line-container">
           <div className="line"></div>
           </div>
+          
+        
           <div className='output-style'>
               {tasks.map((task, index) => (
                 <div key={index} className='task-item'>
@@ -118,10 +121,11 @@ const handleTaskDelete = (taskIndex) =>{
                 </div>
               ))}
             </div>
+            
           <div className='task-container'>         
           <h3 className="icon-style">Nova tarefa...</h3>
           <div className='input-container'>
-           
+         
           {isAddingTask ? (
             <div className='input-text'>
               <input type="text" placeholder='Digite a tarefa...' value={currentTask} onChange={handleTaskChange} className='checkbox-input'/>
@@ -133,11 +137,14 @@ const handleTaskDelete = (taskIndex) =>{
           )}
           </div>
           </div>
+          </>
+        )}
       </div>
 
       <CustomModal isOpen={isDeleteModalOpen} onClose={closeDeleteModal} onConfirm={() => {
         handleTaskDelete(taskToDelete)
         }}/>
+       
     </div>
   )
 }
