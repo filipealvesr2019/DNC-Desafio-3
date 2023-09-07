@@ -5,6 +5,10 @@ import pen from '/images/pen.png';
 import trash from '/images/trash-can.png';
 import CustomModal from './components/custumModal';
 
+
+
+
+
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState('');
@@ -30,14 +34,6 @@ function TodoList() {
     setTasks(updatedTasks);
     setCurrentTask('');
     setEditingTask(null);
-
-
-
-
-
-
-
-
 
 
 
@@ -187,4 +183,3 @@ const handleTaskDelete = (taskIndex) =>{
 
 
 export default TodoList;
-
