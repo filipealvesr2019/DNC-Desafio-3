@@ -120,7 +120,9 @@ const handleTaskDelete = (taskIndex) =>{
                   {editingTask === index ? (
                    <div className='input-text'>
                    <input type="text" placeholder='Digite a tarefa...' value={currentTask} onChange={handleTaskChange} className='checkbox-input'/>
-                   <button onClick={handleTaskAdd} className='checkbox-image'>Adicionar</button>
+                   <button onClick={() => {
+                    handleTaskEdit(index)
+                   }} className='checkbox-image'>Salvar</button>
                  </div>
                  ):(
                   <>   
