@@ -7,11 +7,11 @@ function custumModal({isOpen, onClose, onConfirm}) {
   return (
     <div className={styles.modalOverlay}>
         <div className={styles.modalContent}>
-        <p>Você quer excluir a tarefa?</p>
-        <p>Colocar as descrições das tarefas aqui.</p>
+        <h4>Deseja excluir esse item?</h4>
+        <h5>Colocar as descrições das tarefas aqui.</h5>
         <div className={styles.btn}>
-        <button className={styles.btn} onClick={onClose}>Não</button>
-        <button className={styles.btn} onClick={onConfirm}>Sim</button>
+        <button className={styles.btnA} onClick={onClose}>Não</button>
+        <button className={styles.btnB} onClick={onConfirm}>Sim</button>
         </div>
        
 

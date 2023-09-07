@@ -15,6 +15,28 @@ function TodoList() {
   const [taskStates, setTaskStates] = useState([]);
   const [taskToDelete, setTaskToDelete] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [editingTask, setEditingTask] = useState(null);
+
+
+
+  const handleEditClick  =  (index) =>{
+    setEditingTask(index);
+    setCurrentTask(tasks[index]);
+  }
+
+  const handleTaskEdit  = (index) =>{
+    const updatedTasks = [...tasks];
+    updatedTasks[index] = currentTask;
+    setTasks(updatedTasks);
+    setCurrentTask('');
+    setEditingTask(null);
+
+
+
+
+
+
+
 
 
 
@@ -93,9 +115,15 @@ const handleTaskDelete = (taskIndex) =>{
           
         
           <div className='output-style'>
-              {tasks.map((task, index) => (
+              {tasks.map((task, index) => ( 
                 <div key={index} className='task-item'>
-               
+                  {editingTask === index ? (
+                   <div className='input-text'>
+                   <input type="text" placeholder='Digite a tarefa...' value={currentTask} onChange={handleTaskChange} className='checkbox-input'/>
+                   <button onClick={handleTaskAdd} className='checkbox-image'>Adicionar</button>
+                 </div>
+                 ):(
+                  <>   
                   <span className='elements'>{task}</span>
                   
       <i className='elements'>
@@ -111,12 +139,17 @@ const handleTaskDelete = (taskIndex) =>{
       />
     </i>
                     <span className='elements'>
-                      <i className='icon edit-icon'> <img src={pen} alt="icone de lapis" /></i>
+                      <i className='icon edit-icon' onClick={() => {
+                        handleEditClick(index)
+                      }}> <img src={pen} alt="icone de lapis" /></i>
+                     
+                    
                       <i className='icon delete-icon' onClick={() => {
                         openDeleteModal(index)
                       }}><img src={trash} alt="icone de lixeira" /></i>
                     </span>
-                 
+                    </>
+                   )}
                
                 </div>
               ))}
