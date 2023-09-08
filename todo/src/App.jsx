@@ -34,7 +34,7 @@ function TodoList() {
     setTasks(updatedTasks);
     setCurrentTask('');
     setEditingTask(null);
-
+  }
 
 
   const openDeleteModal = (taskIndex) => {
