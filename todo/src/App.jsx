@@ -20,6 +20,7 @@ function TodoList() {
   const [taskToDelete, setTaskToDelete] = useState(null);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
 
 
 
@@ -59,7 +60,8 @@ const handleTaskDelete = (taskIndex) =>{
 
 
   const handleTaskChange = (e) => {
-    setCurrentTask(e.target.value)
+    setCurrentTask(e.target.value);
+    setErrorMsg(null)
   }
 
   const handleTaskAdd = () =>{
@@ -73,7 +75,9 @@ const handleTaskDelete = (taskIndex) =>{
       setTasks(tasksWithNewTask);
       localStorage.setItem('tasks', JSON.stringify(tasksWithNewTask));
 
-    }
+    } else[
+      setErrorMsg('Erro: O campo está vazio. Tente novamente.')
+    ]
   }
 
   const handleAddButtonClick = () => {
@@ -151,6 +155,7 @@ const handleTaskDelete = (taskIndex) =>{
                
                 </div>
               ))}
+             
             </div>
             
           <div className='task-container'>         
@@ -164,10 +169,12 @@ const handleTaskDelete = (taskIndex) =>{
             </div>  
           ) : (
             <button className='plus-input add-button' onClick={handleAddButtonClick}><img src={plus} alt="icone de +" /></button>
+            
 
           )}
           </div>
           </div>
+          {errorMsg && <p className='err'>{errorMsg}</p>}
           </>
         )}
       </div>
