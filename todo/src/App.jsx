@@ -160,7 +160,7 @@ const handleTaskDelete = (taskIndex) =>{
           {isAddingTask ? (
             <div className='input-text'>
               <input type="text" placeholder='Digite a tarefa...' value={currentTask} onChange={handleTaskChange} className='checkbox-input'/>
-              <button onClick={handleTaskAdd} className='checkbox-image'>Adicionar</button>
+              <button onClick={handleTaskAdd} className='checkbox-image'>Salvar</button>
             </div>  
           ) : (
             <button className='plus-input add-button' onClick={handleAddButtonClick}><img src={plus} alt="icone de +" /></button>
