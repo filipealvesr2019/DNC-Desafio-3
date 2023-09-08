@@ -22,16 +22,27 @@
     justify-content: center;
     align-items: center;
     width: 80%;
+    border-radius: 7px;
 
 }
 
 .btnRight{
     background-color: #FFFFFF;
-    width: 20vw;
-    height: 3vh;
+    width: 18vw;
+    height: 6vh;
     border: 1px solid #000000;
+    border-radius: 7px;
 }
 
+.btnLeft{
+    background-color: #0C70F2;
+    color: #FFFFFF;
+    width: 18vw;
+    height: 6vh;
+    border: 1px solid #000000;
+    border-radius: 7px;
+
+}
 h4{
     font-family: "Raleway";
     font-weight: 600;
@@ -41,5 +52,6 @@ h4{
 h5{
     font-family: "Raleway";
     font-weight: 400;
+    margin-bottom: 10vh;
 }
 
