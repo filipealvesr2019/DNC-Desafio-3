@@ -80,4 +80,9 @@ h5{
         width: 40%;
     }
   }
-  
+
+  @media only screen and (max-width: 1440px) and (min-width: 900px){
+    .modalContent{
+        width: 50%;
+    }
+  }
