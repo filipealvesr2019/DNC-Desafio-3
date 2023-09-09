@@ -275,3 +275,27 @@ h3{
 
   }
 }
+
+@media only screen and (max-width: 1440px) and (min-width: 900px){
+  .modalContent{
+      width: 54%;
+  }
+}
+
+@media only screen and (max-width: 950px){
+  .modalContent{
+      width: 30%;
+  }
+}
+
+
+@media only screen and (max-width: 800px){
+  .modalContent{
+      width: 45%;
+  }
+}
+
+
+
+
+
