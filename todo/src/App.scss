@@ -264,8 +264,8 @@ h3{
   }
 
   .task-item{
-    margin-left: 32vh;
-    width:72%;
+    margin-left: 38vh;
+    width:74%;
   }
 }
 
@@ -279,13 +279,13 @@ h3{
   }
 }
 
-@media only screen and (max-width: 1280px) and (max-width: 800px){
+@media only screen and (max-width: 1280px){
   .line{
-    width: 65vw;
+    width: 55vw;
   }
 
   .task-item{
-    margin-left: 20vh;
+    margin-left: 32vh;
     width: 72%;
   }
 
@@ -294,7 +294,7 @@ h3{
   }
 
   .plus-input{
-    margin-right: 3vw;
+    margin-right: 23vw;
   }
   .input-text{
     margin-right: 23vw;
