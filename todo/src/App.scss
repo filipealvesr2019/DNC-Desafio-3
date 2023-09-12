@@ -237,7 +237,8 @@ h3{
     margin-right: 26vw;
   }
   .err{
-    margin-left: 30vh;
+    margin-left: 35vh;
+    display: block;
   }
 }
 
@@ -250,10 +251,7 @@ h3{
     color: red;
 
   }
-}
-
-@media only screen and (max-width: 1440px) and (min-width: 900px){
-  .modalContent{
+ .modalContent{
       width: 54%;
   }
 }
@@ -281,7 +279,7 @@ h3{
 
 @media only screen and (max-width: 950px){
   .modalContent{
-      width: 30%;
+      width: 40%;
   }
 }
 
@@ -293,10 +291,7 @@ h3{
     color: red;
 
   }
-}
 
-
-@media only screen and (max-width: 800px){
   .modalContent{
       width: 45%;
   }
