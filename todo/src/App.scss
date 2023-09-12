@@ -251,9 +251,21 @@ h3{
 
 
 @media only screen and (max-width: 1333px) and (min-width: 728px){
+  .line{
+    width: 54vw;
+  }
+
+  h3{
+    margin-left: 24vw;
+  }
+
+  .plus-input{
+    margin-right: 23vw;
+  }
+
   .task-item{
-    margin-left: 34vh;
-    width:68%;
+    margin-left: 32vh;
+    width:72%;
   }
 }
 
