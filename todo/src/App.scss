@@ -221,20 +221,20 @@ h3{
 
 @media only screen and (max-width: 1440px) and (min-width: 900px){
   .line{
-    width: 48vw;
+    width: 50vw;
   }
 
   .task-item{
-    margin-left: 28vh;
-    width: 64%;
+    margin-left: 30vh;
+    width: 68%;
   }
 
   h3{
-    margin-left: 27vw;
+    margin-left: 25vw;
   }
 
   .plus-input{
-    margin-right: 26vw;
+    margin-right: 24vw;
   }
   .input-text{
     margin-right: 25vw;
@@ -249,6 +249,13 @@ h3{
   }
 }
 
+
+@media only screen and (max-width: 1333px) and (min-width: 728px){
+  .task-item{
+    margin-left: 30vh;
+    width:64%;
+  }
+}
 
 @media only screen and (max-width: 950px){
   .modalContent{
@@ -291,7 +298,6 @@ h3{
       width: 45%;
   }
 }
-
 
 
 
