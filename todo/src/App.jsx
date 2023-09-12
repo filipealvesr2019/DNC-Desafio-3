@@ -157,7 +157,7 @@ const handleTaskDelete = (taskIndex) =>{
               ))}
              
             </div>
-            
+            {errorMsg && <p className='err'>{errorMsg}</p>}
           <div className='task-container'>         
           <h3 className="icon-style">Nova tarefa...</h3>
           <div className='input-container'>
@@ -174,7 +174,7 @@ const handleTaskDelete = (taskIndex) =>{
           )}
           </div>
           </div>
-          {errorMsg && <p className='err'>{errorMsg}</p>}
+          
           </>
         )}
       </div>
