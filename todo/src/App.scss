@@ -207,6 +207,18 @@ h3{
 }
 
 
+@media only screen and (max-width: 1920px) and (min-width: 1080px){
+  .input-text{
+    margin-right: 30vw;
+  }
+  .err{
+    margin-left: 56vw;
+    color: red;
+
+  }
+}
+
+
 @media only screen and (max-width: 1440px) and (min-width: 900px){
   .line{
     width: 48vw;
@@ -223,6 +235,26 @@ h3{
 
   .plus-input{
     margin-right: 26vw;
+  }
+  .err{
+    margin-left: 30vh;
+  }
+}
+
+@media only screen and (max-width: 1444px) and (min-width: 900px){
+  .input-text{
+    margin-right: 30vw;
+  }
+  .err{
+    margin-left: 56vw;
+    color: red;
+
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 900px){
+  .modalContent{
+      width: 54%;
   }
 }
 
@@ -245,27 +277,14 @@ h3{
   }
 }
 
-@media only screen and (max-width: 1920px) and (min-width: 1080px){
-  .input-text{
-    margin-right: 30vw;
-  }
-  .err{
-    margin-left: 56vw;
-    color: red;
 
+
+@media only screen and (max-width: 950px){
+  .modalContent{
+      width: 30%;
   }
 }
 
-@media only screen and (max-width: 1444px) and (min-width: 900px){
-  .input-text{
-    margin-right: 30vw;
-  }
-  .err{
-    margin-left: 56vw;
-    color: red;
-
-  }
-}
 
 @media only screen and (max-width: 800px){
   
@@ -276,24 +295,13 @@ h3{
   }
 }
 
-@media only screen and (max-width: 1440px) and (min-width: 900px){
-  .modalContent{
-      width: 54%;
-  }
-}
-
-@media only screen and (max-width: 950px){
-  .modalContent{
-      width: 30%;
-  }
-}
-
 
 @media only screen and (max-width: 800px){
   .modalContent{
       width: 45%;
   }
 }
+
 
 
 
